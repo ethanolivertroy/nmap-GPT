@@ -2,6 +2,6 @@
 
 
 ```
-python nmap_openai.py example.com -p 22
+python3 test.py example.com -p 80
 
 ```
