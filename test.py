@@ -30,17 +30,18 @@ for host in nm.all_hosts():
         for port in lport:
             print('port: {}\tstate: {}'.format(port, nm[host][protocol][port]['state']))
 
-# Send the results to the OpenAI API
-prompt = "What security concerns should I be aware of given the  open ports from the Nmap scan results for host: {}".format(host)
-response = openai.Completion.create(
-    engine="text-davinci-002",
-    prompt=prompt,
-    max_tokens=1024,
-    n=1,
-    stop=None,
-    temperature=0.5,
-)
+            # Send a prompt to OpenAI for each open port
+            if nm[host][protocol][port]['state'] == 'open':
+                prompt = f"What security concerns should I be aware of given the {protocol} service on port {port} for host: {host}?"
+                response = openai.Completion.create(
+                    engine="text-davinci-002",
+                    prompt=prompt,
+                    max_tokens=1024,
+                    n=1,
+                    stop=None,
+                    temperature=0.5,
+                )
 
-# Extract the generated report from the OpenAI API response
-text = response["choices"][0]["text"]
-print("OpenAI Report:\n{}".format(text))
+                # Extract the generated report from the OpenAI API response
+                text = response["choices"][0]["text"]
+                print("OpenAI Report:\n{}".format(text))
