@@ -26,7 +26,7 @@ for host in nm.all_hosts():
     for protocol in nm[host].all_protocols():
         print('Protocol: {}'.format(protocol))
         lport = nm[host][protocol].keys()
-        lport.sort()
+        lport = sorted(lport)
         for port in lport:
             print('port: {}\tstate: {}'.format(port, nm[host][protocol][port]['state']))
 
