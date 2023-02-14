@@ -9,9 +9,18 @@ The script sends the output of the NMAP scan to the OpenAI API and provides insi
 python3 nmap-gpt.py example.com -p 80
 ```
 
-## Example
+## Examples 
+
+### Instacart
 
 I used instacart since they have an open bug bounty program on hackerone: https://hackerone.com/instacart/
 
 ![image](https://user-images.githubusercontent.com/63926014/218787405-c4fdd27d-06b6-44e6-ae97-174033dd2288.png)
 
+### Twitter
+
+I used twitter since they have an open bug bounty program on hackerone: https://hackerone.com/twitter
+
+![image](https://user-images.githubusercontent.com/63926014/218797253-d5d01fed-e425-4379-9dfa-f29d862a82ec.png)
+
+![image](https://user-images.githubusercontent.com/63926014/218797293-41bd2fc3-0c65-4d46-a103-fe79f56a9cbf.png)
