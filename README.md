@@ -1,8 +1,6 @@
 # NMAP-GPT
 
-The purpose of this tool is to help new security professionals actively learn the considerations they might make based on the open ports on an NMAP scan. 
-
-The script sends the output of the NMAP scan to the OpenAI API and provides insight on what security considerations should be made for those open ports.
+This tool helps new security professionals actively learn how to address security concerns associated with open ports on a network device by scanning the device using Nmap and then leveraging the OpenAI API to provide insight on the specific security considerations that should be made for each open port.
 
 
 ```python3
